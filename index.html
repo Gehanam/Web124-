@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="final.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Web 124 Final Project: JS Calculator</title>
+</head>
+<body>
+    <h1>JavaScript Calculator</h1>
+    <label for="num">Enter a number:</label>
+    <input type="number" id="num">
+    <button id="calculateBtn">Calculate</button>
+    
+    <p id="addition">Addition</p>
+    <p id="subtraction">Subtraction</p>
+    <p id="multiplication">Multiplication</p>
+    <p id="division">Division</p>
+    <p id="remainder">Remainder</p>
+    
+    
+    
+    <script>
+        function add() {
+            let num = parseInt(document.getElementById('num').value);
+            let result = '';
+            for (let i = -5; i <= 15; i++) {
+                result += (num + i) + ' , ';
+            }
+           
+            document.getElementById('addition').innerText = result;
+           
+        }
+
+        function subtract() {
+            let num = parseInt(document.getElementById('num').value);
+            let result = '';
+            let i = -5;
+            while (i <= 15) {
+                result += (num - i) + ' , ';
+                i++;
+            }
+            
+          
+            
+            
+            document.getElementById('subtraction').innerText = result;
+        }
+
+        function multiply() {
+            let num = parseInt(document.getElementById('num').value);
+            let result = '';
+            let i = -5;
+            do {
+                result += (num * i) + ' , ';
+                i++;
+            } while (i <= 15);
+            document.getElementById('multiplication').innerText = result;
+        }
+
+        function divide() {
+            let num = parseInt(document.getElementById('num').value);
+            let result = '';
+            for (let i = -5; i <= 15; i++) {
+                result += (num / i).toFixed(2) + ' , ';
+            }
+            document.getElementById('division').innerText = result;
+        }
+
+        function remainder() {
+            let num = parseInt(document.getElementById('num').value);
+            let result = '';
+            for (let i = -5; i <= 15; i++) {
+                result += (num % i) + ' ';
+                let remainder = num % i;
+            let isEven = (remainder / 2) % 1 === 0 ? 'true' : 'false';
+            result += `( Remainder of ${num} % ${i} is ${remainder}, is even: ${isEven} )\n`;
+            }
+           
+            document.getElementById('remainder').innerText = result;
+        }
+
+  
+
+
+        
+        function calculate() {
+            add();
+            subtract();
+            multiply();
+            divide();
+            remainder();
+            truthAddition();
+            truthSubtraction();
+            truthMultiplication();
+            truthDivsion();
+            truthRemainder();
+        
+        
+        }
+
+        document.getElementById('calculateBtn').addEventListener('click', calculate);
+    </script>
+
+<footer>
+    &copy; 2025 Web 124 Final Project: Chris Stewart
+    <a href="mailto:cstewa62@stumail.jccc.edu">cstewa62@stumail.jccc.edu</a>
+ </footer>
+
+</body>
+</html>
