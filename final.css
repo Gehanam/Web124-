@@ -2,7 +2,7 @@ body {
     font-family:'Times New Roman', Times, serif;
     margin: 0;
     padding: 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background: rgb(31, 138, 209);
     color: whitesmoke;
 }
 
